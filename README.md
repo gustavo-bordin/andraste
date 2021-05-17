@@ -3,7 +3,7 @@
         <h1>Andraste</h1>
         <p style="margin-right: 20px;text-align: justify">Andraste is know as the base for the creation, her teaching were used for leading and defining how everything would be. In Octopus, Andraste is the base for the crawlers, it controls and define where all the collected data goes. It is created wrapping the scrapy framework, her purpose is to get the inputs, pass to the crawlers, follow the data and send it to Blackwall</p>
     </div>
-    <img style="max-width: 200px; max-height: 1000px" src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg">
+    <img style="max-width: 200px; max-height: 270px" src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg">
 </div>
 
 <hr>

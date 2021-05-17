@@ -1,13 +1,12 @@
-<div style="display: flex; justify-content:space-between; max-height: 300px;">
-    <div>
-        <h1>Andraste</h1>
-        <p style="margin-right: 20px;text-align: justify">Andraste is know as the base for the creation, her teaching were used for leading and defining how everything would be. In Octopus, Andraste is the base for the crawlers, it controls and define where all the collected data goes. It is created wrapping the scrapy framework, her purpose is to get the inputs, pass to the crawlers, follow the data and send it to Blackwall</p>
-    </div>
-    <img style="max-width: 200px; max-height: 1000px" src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg">
-</div>
 
-<hr>
-<br><br>
+<img src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg" align="left" width="40%" height="300px"/>
+<img align="left" width="" height="370px" hspace="10" />
+
+# Andraste
+
+Andraste is know as the base for the creation, her teaching were used for leading and defining how everything would be. In Octopus, Andraste is the base for the crawlers, it controls and define where all the collected data goes. It is created wrapping the scrapy framework, her purpose is to get the inputs, pass to the crawlers, follow the data and send it to Blackwall
+
+<br clear="both"/>
 
 ##  1. Usage
 ##### 1.1 Using the base class:<br>
@@ -34,3 +33,4 @@ python3 andraste.py bot.bot.Crawler
 ```
 python3 -m unittest tests/file_name.py
 ```
+

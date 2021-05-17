@@ -1,5 +1,5 @@
 
-<img src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg" align="left" width="40%" height="300px"/>
+<img src="https://i.pinimg.com/originals/cb/38/8a/cb388adbbb7ed5b190e06903491b82ed.jpg" align="left" width="30%"/>
 <img align="left" width="" height="370px" hspace="10" />
 
 # Andraste

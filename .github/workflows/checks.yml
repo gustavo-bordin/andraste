@@ -33,5 +33,4 @@ jobs:
     - name: Run check
       env: ${{ matrix.env }}
       run: |
-        pip install -U tox
-        tox
+        python3 -m unittest tests/args_test.py

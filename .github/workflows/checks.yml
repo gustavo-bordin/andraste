@@ -20,7 +20,6 @@ jobs:
 
     - name: Run tests
       run: |
-        tox
         if [[ ! -z "$PYPY_VERSION" ]]; then
           export PYPY_VERSION="pypy$PYPY_VERSION-linux64"
           wget "https://downloads.python.org/pypy/${PYPY_VERSION}.tar.bz2"

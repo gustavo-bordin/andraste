@@ -6,9 +6,8 @@ from scrapy.crawler import CrawlerProcess
 
 def _create_args(parser):
     parser.add_argument("mfc", help="Provide module.file.ClassName")
-    args = parser.parse_args()
-    return args
-    
+    return parser
+
 
 def _run(class_reference):
     process = CrawlerProcess({})
@@ -31,6 +30,7 @@ def _create_parser():
 def main():
     parser = _create_parser()
     args = _create_args(parser)
+    args.parse_args()
     class_reference = _get_class_reference(args)
     _run(class_reference)
 

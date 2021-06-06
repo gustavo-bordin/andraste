@@ -6,6 +6,8 @@ jobs:
     strategy:
       matrix:
         include:
+        - python-version: 3.7
+        - python-version: 3.8
         - python-version: 3.9
 
     steps:
@@ -16,6 +18,15 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Run check
+    - name: Run tests
       run: |
-        python3 -m unittest tests/args_test.py
+        tox
+        if [[ ! -z "$PYPY_VERSION" ]]; then
+          export PYPY_VERSION="pypy$PYPY_VERSION-linux64"
+          wget "https://downloads.python.org/pypy/${PYPY_VERSION}.tar.bz2"
+          tar -jxf ${PYPY_VERSION}.tar.bz2
+          $PYPY_VERSION/bin/pypy3 -m venv "$HOME/virtualenvs/$PYPY_VERSION"
+          source "$HOME/virtualenvs/$PYPY_VERSION/bin/activate"
+        fi
+        pip install -U tox
+        tox --skip-missing-interpreters

@@ -1,3 +1,5 @@
 scrapy
+pika
+crochet
 pytest
 tox

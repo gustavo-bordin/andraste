@@ -24,6 +24,7 @@ class Queue:
     def setup(self):
         self._create_connection()
         self._create_channel()
+        self._define_queue()
 
     def close_connection(self):
         self.connection.close()

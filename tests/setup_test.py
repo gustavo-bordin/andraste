@@ -1,4 +1,3 @@
-from argparse import ArgumentParser
 import unittest
 
 from andraste import Setup

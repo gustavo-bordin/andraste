@@ -1,39 +1,35 @@
 import argparse
 import importlib
 
-from scrapy.crawler import CrawlerProcess
 
+class Setup:
+    def __init__(self):
+        self.parser = None
+        self.args = None
+        self.crawler_class = None
 
-def _create_args(parser):
-    parser.add_argument("mfc", help="Provide module.file.ClassName")
-    return parser
+    def _create_args(self):
+        self.parser.add_argument("mfc", help="Provide module.file.ClassName")
+        self.args = self.parser
 
+    def _get_crawler_reference(self):
+        path_to_class = self.args.mfc.split('.')
+        path_to_file = '.'.join(path_to_class[:-1])
+        class_name = path_to_class[-1]
 
-def _run(class_reference):
-    process = CrawlerProcess({})
-    process.crawl(class_reference)
-    process.start()
+        file_reference = importlib.import_module(path_to_file)
+        self.crawler_class = getattr(file_reference, class_name)
 
-
-def _get_class_reference(args):
-    module, file, class_name = args.mfc.split('.')
-    file_reference = importlib.import_module(f'{module}.{file}')
-    class_reference = getattr(file_reference, class_name)
-    return class_reference
-
-
-def _create_parser():
-    parser = argparse.ArgumentParser(description="Runs a crawler class")
-    return parser
+    def _create_parser(self):
+        parser = argparse.ArgumentParser(description="Runs a crawler class")
+        self.parser = parser
     
-
-def main():
-    parser = _create_parser()
-    args = _create_args(parser)
-    args.parse_args()
-    class_reference = _get_class_reference(args)
-    _run(class_reference)
-
+    def start(self):
+        self._create_parser()
+        self._create_args()
+        self.args = self.args.parse_args()
+        self._get_crawler_reference()
 
 if __name__ == "__main__":
-    main()
+    setup = Setup()
+    setup.start()

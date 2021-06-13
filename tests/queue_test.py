@@ -10,5 +10,6 @@ class TestSetup(unittest.TestCase):
        self.assertTrue(queue.connection)
        self.assertTrue(queue.channel)
 
+    
 if __name__ == '__main__':
     unittest.main()

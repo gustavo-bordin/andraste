@@ -1,6 +1,6 @@
 import argparse
 import importlib
-
+from core.flow import Flow
 
 class Setup:
     def __init__(self):
@@ -29,6 +29,10 @@ class Setup:
         self._create_args()
         self.args = self.args.parse_args()
         self._get_crawler_reference()
+
+        flow = Flow(self.crawler_class)
+        flow.start()
+        
 
 if __name__ == "__main__":
     setup = Setup()

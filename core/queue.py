@@ -1,4 +1,5 @@
 import pika
+import json
 
 
 class Queue:
@@ -35,7 +36,16 @@ class Queue:
             callback, 
             auto_ack=True
         )
-        
+    
+    def publish(self, message):
+        self.channel.basic_publish(
+            exchange='',
+            routing_key=self.queue_name,
+            body=json.dumps(message),
+            properties=pika.BasicProperties(
+                delivery_mode = 2
+        ))
+
 
 
 

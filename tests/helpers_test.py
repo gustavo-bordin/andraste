@@ -64,7 +64,10 @@ class TestSetup(unittest.TestCase):
         ]
 
         for name_index in range(len(classes)):
-            queue_name = get_queue_name(classes[name_index])
+            queue_name = get_queue_name(
+                class_name=classes[name_index].__name__,
+                queue_type="inputs"
+            )
             self.assertEqual(expected_queue_names[name_index], queue_name)
 
         

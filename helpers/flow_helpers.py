@@ -9,9 +9,8 @@ def _convert_class_to_kebab(class_name):
 
     return converted_name.lower()
         
-def get_queue_name(crawler_class):
-    class_name = crawler_class.__name__
+def get_queue_name(class_name, queue_type):
     class_kebab_case = _convert_class_to_kebab(class_name)
-    queue_name = f"{class_kebab_case}.inputs"
+    queue_name = f"{class_kebab_case}.{queue_type}"
 
     return queue_name

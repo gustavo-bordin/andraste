@@ -4,7 +4,7 @@
 
 # Andraste
 
-Andraste is know as the base for the creation, her teaching were used for leading and defining how everything would be. In Octopus, Andraste is the base for the crawlers, it controls and define where all the collected data goes. It is created wrapping the scrapy framework, her purpose is to get the inputs, pass to the crawlers, follow the data and send it to Blackwall
+Andraste is know as the base for the creation, her teaching were used for leading and defining how everything would be. Andraste is the base for the crawlers, it controls and define where all the collected data goes. It is created wrapping the scrapy framework, her purpose is to get the inputs, pass to the crawlers, follow the data and send it to treatment
 
 <br clear="both"/>
 <br>
